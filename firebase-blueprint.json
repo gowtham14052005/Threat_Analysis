@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "users": {
+      "description": "User profiles and preferences for the phishing detection platform",
+      "fields": {
+        "email": { "type": "string", "description": "User email" },
+        "displayName": { "type": "string", "description": "Display name" },
+        "photoURL": { "type": "string", "description": "Avatar URL" },
+        "role": { "type": "string", "description": "User role: user, analyst, admin" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "lastLoginAt": { "type": "string", "description": "Last login timestamp" },
+        "settings": { "type": "map", "description": "User configuration preferences" }
+      }
+    },
+    "scans": {
+      "description": "Scanned URL analysis records with SVM features, risk scores, and AI explanations",
+      "fields": {
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "url": { "type": "string", "description": "The analyzed URL" },
+        "domain": { "type": "string", "description": "Extracted domain name" },
+        "isPhishing": { "type": "boolean", "description": "SVM binary classification result" },
+        "riskScore": { "type": "number", "description": "Risk score between 0 and 100" },
+        "threatLevel": { "type": "string", "description": "Safe, Low, Suspicious, or Phishing" },
+        "predictionConfidence": { "type": "number", "description": "Model confidence percentage" },
+        "svmDetails": { "type": "map", "description": "SVM model math parameters, kernel, hyperplane distance" },
+        "extractedFeatures": { "type": "map", "description": "Extracted academic URL and web features" },
+        "domainInfo": { "type": "map", "description": "WHOIS, DNS, and SSL security details" },
+        "threatIntelligence": { "type": "map", "description": "Blacklist and threat feed checks" },
+        "explainableAi": { "type": "map", "description": "XAI explanations, SHAP feature impacts, and recommendations" },
+        "timestamp": { "type": "number", "description": "Scan epoch millisecond timestamp" },
+        "status": { "type": "string", "description": "Status: completed, flagged, investigated" },
+        "bookmarked": { "type": "boolean", "description": "Saved/starred by user" }
+      }
+    },
+    "alerts": {
+      "description": "Security incident alerts generated from high-risk phishing detections",
+      "fields": {
+        "userId": { "type": "string", "description": "Target or reporting user ID" },
+        "scanId": { "type": "string", "description": "Associated scan document ID" },
+        "url": { "type": "string", "description": "Flagged malicious URL" },
+        "domain": { "type": "string", "description": "Flagged malicious domain" },
+        "threatType": { "type": "string", "description": "e.g. Credential Harvesting, Fake Banking, Brand Impersonation" },
+        "severity": { "type": "string", "description": "Critical, High, Medium, Low" },
+        "status": { "type": "string", "description": "Active, Investigating, Blocked, False_Positive, Resolved" },
+        "notes": { "type": "string", "description": "Analyst remarks or mitigation notes" },
+        "createdAt": { "type": "number", "description": "Alert creation timestamp" },
+        "resolvedAt": { "type": "number", "description": "Resolution timestamp if resolved" }
+      }
+    },
+    "watchlist": {
+      "description": "Custom user or organizational whitelist and blacklist domain records",
+      "fields": {
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "type": { "type": "string", "description": "whitelist or blacklist" },
+        "domainOrUrl": { "type": "string", "description": "Domain or URL pattern" },
+        "reason": { "type": "string", "description": "Reason for rule" },
+        "addedAt": { "type": "number", "description": "Creation epoch timestamp" }
+      }
+    }
+  }
+}

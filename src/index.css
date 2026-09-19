@@ -1,0 +1,361 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global Theme Variable Mappings */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --text-primary: #020617;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+}
+
+html.dark {
+  --bg-primary: #060b13;
+  --bg-surface: #0f172a;
+  --bg-subtle: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+}
+
+/* Dark mode element styling overrides for smooth transformation */
+.dark body {
+  background-color: #060b13;
+  color: #f8fafc;
+}
+
+.dark header {
+  background-color: rgba(11, 17, 32, 0.92) !important;
+  border-color: #1e293b !important;
+}
+
+.dark footer {
+  background-color: #0b1120 !important;
+  border-color: #1e293b !important;
+}
+
+.dark footer span,
+.dark footer p,
+.dark footer div {
+  color: #94a3b8 !important;
+}
+
+.dark footer .font-mono span {
+  color: #38bdf8 !important;
+}
+
+/* Dark mode cards, modals, and panel surfaces */
+.dark .bg-white {
+  background-color: #0f172a !important;
+  color: #f8fafc;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #0b1329 !important;
+}
+
+.dark .bg-blue-50 {
+  background-color: #0f2042 !important;
+}
+
+.dark .bg-blue-50\/60,
+.dark .bg-blue-50\/80 {
+  background-color: rgba(15, 32, 66, 0.6) !important;
+}
+
+.dark .bg-slate-50\/60 {
+  background-color: rgba(11, 19, 41, 0.6) !important;
+}
+
+.dark .bg-emerald-50,
+.dark .bg-emerald-50\/60 {
+  background-color: rgba(6, 78, 59, 0.3) !important;
+}
+
+.dark .bg-rose-50,
+.dark .bg-rose-50\/60 {
+  background-color: rgba(136, 19, 55, 0.3) !important;
+}
+
+.dark .bg-amber-50,
+.dark .bg-amber-50\/60 {
+  background-color: rgba(120, 53, 15, 0.3) !important;
+}
+
+.dark .bg-purple-50,
+.dark .bg-purple-50\/60 {
+  background-color: rgba(88, 28, 135, 0.3) !important;
+}
+
+/* Borders in Dark Mode */
+.dark .border-blue-100,
+.dark .border-blue-200,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #1e293b !important;
+}
+
+.dark .border-emerald-200 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.dark .border-rose-200 {
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+.dark .border-amber-200 {
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Text colors in Dark Mode */
+.dark .text-blue-950,
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+.dark .text-blue-900,
+.dark .text-blue-900\/70,
+.dark .text-blue-900\/60,
+.dark .text-blue-900\/50,
+.dark .text-blue-900\/40,
+.dark .text-blue-800,
+.dark .text-blue-800\/70,
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-blue-600 {
+  color: #38bdf8 !important;
+}
+
+.dark .text-emerald-700,
+.dark .text-emerald-800 {
+  color: #34d399 !important;
+}
+
+.dark .text-rose-700,
+.dark .text-rose-800 {
+  color: #fb7185 !important;
+}
+
+.dark .text-amber-700,
+.dark .text-amber-800 {
+  color: #fbbf24 !important;
+}
+
+/* Inputs and textareas */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #0b1329 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Toolbars, popovers, dropdowns */
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   CYBER TYPOGRAPHY & FONT SYSTEM
+   ========================================================================== */
+
+.font-cyber {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-tech {
+  font-family: 'Chakra Petch', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Base font assignment */
+body {
+  font-family: 'Chakra Petch', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   CYBER COMMAND HUD & HIGH-TECH DESIGN SYSTEM
+   ========================================================================== */
+
+.cyber-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+}
+
+.dark .cyber-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+}
+
+/* Cyber ambient scanlines effect */
+.cyber-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Cyber neon glows */
+.neon-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.6), 0 0 24px rgba(6, 182, 212, 0.3);
+}
+
+.neon-glow-emerald {
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.6), 0 0 24px rgba(16, 185, 129, 0.3);
+}
+
+.neon-glow-rose {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.6), 0 0 24px rgba(244, 63, 94, 0.3);
+}
+
+.cyber-box-glow {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15), inset 0 0 15px rgba(6, 182, 212, 0.05);
+}
+
+.dark .cyber-box-glow {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.22), inset 0 0 20px rgba(6, 182, 212, 0.08);
+}
+
+/* Chamfered cyber corner cutting */
+.cyber-chamfer {
+  clip-path: polygon(
+    0 12px, 
+    12px 0, 
+    calc(100% - 12px) 0, 
+    100% 12px, 
+    100% calc(100% - 12px), 
+    calc(100% - 12px) 100%, 
+    12px 100%, 
+    0 calc(100% - 12px)
+  );
+}
+
+.cyber-chamfer-lg {
+  clip-path: polygon(
+    0 20px, 
+    20px 0, 
+    calc(100% - 20px) 0, 
+    100% 20px, 
+    100% calc(100% - 20px), 
+    calc(100% - 20px) 100%, 
+    20px 100%, 
+    0 calc(100% - 20px)
+  );
+}
+
+@keyframes cyber-scan-beam {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+}
+
+.animate-cyber-scan {
+  animation: cyber-scan-beam 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes cyber-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(6, 182, 212, 0.75));
+  }
+}
+
+.animate-cyber-glow {
+  animation: cyber-glow-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes cyber-radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-cyber-radar {
+  animation: cyber-radar-sweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+/* Cyber card corner tactical HUD crosshairs */
+.cyber-hud-card {
+  position: relative;
+}
+
+.cyber-hud-card::before,
+.cyber-hud-card::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cyber-hud-card::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid rgba(6, 182, 212, 0.6);
+  border-left: 2px solid rgba(6, 182, 212, 0.6);
+}
+
+.cyber-hud-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.6);
+  border-right: 2px solid rgba(6, 182, 212, 0.6);
+}
+
+.dark .cyber-hud-card::before {
+  border-top-color: rgba(34, 211, 238, 0.85);
+  border-left-color: rgba(34, 211, 238, 0.85);
+}
+
+.dark .cyber-hud-card::after {
+  border-bottom-color: rgba(34, 211, 238, 0.85);
+  border-right-color: rgba(34, 211, 238, 0.85);
+}
+

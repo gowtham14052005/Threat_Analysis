@@ -1,0 +1,6 @@
+{
+  "name": "URL Security Score Checker",
+  "description": "Instant website link security scanner that evaluates any URL and provides a definitive Secure Score with clear safety insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
